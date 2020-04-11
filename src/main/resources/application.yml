@@ -6,7 +6,27 @@ spring:
     username: root
     password: root
     driver-class-name: com.mysql.jdbc.Driver
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+  kafka:
+    bootstrap-servers: 104.199.151.208:9092
+    consumer:
+      group-id: mygrop
+    template:
+      default-topic: test
+    listener:
+      concurrency: 5
+    producer:
+      batch-size: 1000
 
 mybatis:
   type-aliases-package: com.example.demo.bean
   mapper-locations: classpath:mapper/*.xml
+
+
+
